@@ -1,0 +1,197 @@
+﻿<%@ Master Language="VB" AutoEventWireup="false" CodeBehind="dir.master.vb" Inherits="app_gest_ecole.dir" %>
+
+<html>
+<head runat="server">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Application Ecole Canadienne</title>
+    <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+    <!-- Inclure Font Awesome CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <!-- Inclure Font Awesome CSS via CDN -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css">
+
+    <!-- Inclure Font Awesome JavaScript via CDN (si nécessaire) -->
+    <script src="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/js/all.min.js"></script>
+    <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+    <!-- Inclure Font Awesome JavaScript (si nécessaire) -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/js/all.min.js"></script>
+
+    <link
+        href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
+        rel="stylesheet">
+    <link href="css/sb-admin-2-Ar.min.css" rel="stylesheet">
+
+    <!-- Custom styles for this template-->
+    <link href="css/sidebar1.css" rel="stylesheet">
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+    <style type="text/css">
+        .auto-style1 {
+            display: inline-block;
+            font-weight: 400;
+            color: #858796;
+            text-align: center;
+            vertical-align: middle;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+            font-size: 1rem;
+            line-height: 1.5;
+            border-radius: .35rem;
+            transition: none;
+            width: 250px;
+            border: 1px solid transparent;
+            background-color: transparent;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Side navigation -->
+<div class="navbar" style="background-color:transparent; width:100%;">
+        <a href="Accueil_Dir_Ped.aspx" style="background-color:transparent">
+            <div class="container-fluid">
+                <div class="text-right">
+                    <img src="img/logo.png" style="width: 100px" />
+                </div>
+            </div>
+        </a>
+        <div class="dropdown">
+            <button class="dropbtn" style="background-color:transparent">
+                <i class="fa fa-user-o" aria-hidden="true"></i>
+                Elèves
+      <i class="fa fa-caret-down"></i>
+            </button>
+            <div class="dropdown-content">
+                <a href="liste_eleve_dir.aspx">Consulter la liste des élèves</a>
+            </div>
+        </div>
+        <div class="dropdown">
+            <button class="dropbtn" style="background-color:transparent">
+                <i class="fa fa-user-o" aria-hidden="true"></i>
+                Enseignants
+      <i class="fa fa-caret-down"></i>
+            </button>
+            <div class="dropdown-content">
+                <a href="liste_enseignant_dir.aspx">Consulter la liste des enseignants</a>
+            </div>
+        </div>
+    <div class="dropdown" style="background-color: transparent">
+            <button class="dropbtn" style="background-color: transparent">
+                <i class="fa fa-user-o" aria-hidden="true"></i>
+                Historique Elèves
+      <i class="fa fa-caret-down"></i>
+            </button>
+            <div class="dropdown-content">
+                <a href="histbulletinDir.aspx">Historique Bulletin</a>
+                <a href="histAbsDir.aspx">Historique Absence</a>
+                <a href="histECDir.aspx">Historique Ecart Disciplinaire</a>
+                <a href="histIncDir.aspx">Historique Incidents</a>
+            </div>
+        </div>
+     <div class="dropdown" style="background-color: transparent">
+            <button class="dropbtn" style="background-color: transparent">
+                <i class="fa fa-user-o" aria-hidden="true"></i>
+                Historique Enseignants
+      <i class="fa fa-caret-down"></i>
+            </button>
+            <div class="dropdown-content">
+                <a href="histAbsEnsDir.aspx">Historique Absence</a>
+                <a href="histSEnsDir.aspx">Historique Sanction</a>
+            </div>
+        </div>
+    <div class="dropdown" style="background-color:transparent">
+    <button class="dropbtn" style="background-color:transparent"><i class="fa fa-user-o" aria-hidden="true"></i>
+Utilisateurs
+      <i class="fa fa-caret-down"></i>
+    </button>
+    <div class="dropdown-content">
+      <a href="admin_admin.aspx">Ajouter un compte</a>
+      <a href="liste_admin1.aspx">Liste des utilisateurs</a>
+    </div>
+  </div>
+    <div class="dropdown">
+    <button class="dropbtn" style="background-color:transparent"><i class="fa fa-area-chart" aria-hidden="true"></i>
+Tableau de Bord
+      <i class="fa fa-caret-down"></i>
+    </button>
+    <div class="dropdown-content">
+      <a href="TB_Eleve.aspx">Tableau de bord des élèves</a>
+      <a href="TB_Enseignant.aspx">Tableau de bord des enseignants</a>
+    </div>
+  </div>
+        
+        <div style="padding-top: 30px;">
+    <button class="auto-style1" style="background-color: #D32A27; color: white; width:250px;height:50px; font-size:20px" id="btnDeconnexion" runat="server" onclick="deconnexion()">Se Déconnecter</button>
+</div>
+
+
+
+
+    </div>
+
+
+
+
+
+
+    <!-- Page content -->
+    <form runat="server">
+        <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+        </asp:ContentPlaceHolder>
+
+    </form>
+    <!-- Footer -->
+    <footer class="sticky-footer bg-white"style="background-color:transparent">
+        <div class="container my-auto"style="background-color:transparent">
+            <div class="copyright text-center my-auto" style="background-color:transparent">
+                <span style="background-color:transparent" >Copyright &copy; Microsystem Solutions 2024</span>
+            </div>
+        </div>
+    </footer>
+    <!-- End of Footer -->
+    <!-- Bootstrap core JavaScript-->
+    <script src="vendor/jquery/jquery.min.js"></script>
+    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Core plugin JavaScript-->
+    <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+
+    <!-- Custom scripts for all pages-->
+    <script src="js/sb-admin-2.min.js"></script>
+
+    <!-- Page level plugins -->
+    <script src="vendor/chart.js/Chart.min.js"></script>
+
+    <!-- Page level custom scripts -->
+    <script src="js/demo/chart-area-demo.js"></script>
+    <script src="js/demo/chart-pie-demo.js"></script>
+    <script type="text/javascript">
+        function toggleCollapse() {
+            var collapseAdd = document.getElementById('collapseAdd');
+            if (collapseAdd.classList.contains('show')) {
+                collapseAdd.classList.remove('show');
+            } else {
+                collapseAdd.classList.add('show');
+            }
+        }
+    </script>
+    <script>
+    function deconnexion() {
+        // Envoyer une requête au serveur pour déconnecter l'utilisateur
+        // Par exemple, vous pouvez utiliser AJAX pour envoyer une requête au serveur
+
+        // Rediriger l'utilisateur vers la page de connexion
+        window.location.href = "/Login.aspx";
+    }
+</script>
+
+</body>
+</html>
